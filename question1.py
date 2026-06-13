@@ -1,316 +1,311 @@
-"""
-1.
+"""1.ASSIGNMENT: HOSPITAL PATIENT RECORD MANAGEMENT SYSTEM:--
 
-=========================================
-ONLINE SHOPPING CART
-====================
+A multi-specialty hospital is currently maintaining patient records manually in registers. As the number of patients is increasing, it has become difficult to search, update, and manage records efficiently.
 
-A shopping website stores purchased products in a dictionary where:
-Key = Product Name
-Value = Quantity Purchased
+The hospital management has decided to develop a simple Patient Record Management System using Python. The system should store patient information in a nested dictionary where:
 
-Write a program to:
+Key → Patient ID
+Value → Dictionary containing patient details
 
-* Accept a dictionary from the user.
-* Calculate and display the total quantity of products purchased.
+Each patient record should contain:
 
-Sample Input:
-{"Laptop":2,"Mouse":3,"Keyboard":1}
-
-Sample Output:
-Total Quantity = 6
-
----
-"""
-n = int(input("enter the n"))
-d ={}
-for i in range(n):
-    key = input("enter the key")
-    value = int(input("enter the value"))
-    d[key]=value
-print(d) 
-s = sum(d.values())
-print("Total quantity = ",s)   
-
-
-"""
-2.
-
-=========================================
-EMPLOYEE DEPARTMENT COUNT
-=========================
-
-A company stores employee department names in a list.
-
-employees = ["HR","IT","HR","Sales","IT","IT","Finance"]
-
-Write a program to:
-
-* Count how many employees belong to each department.
-* Store the result in a dictionary.
-
-Sample Output:
-{'HR': 2, 'IT': 3, 'Sales': 1, 'Finance': 1}
-
----
-
-3.
-
-=========================================
-WEBSITE PAGE VISIT TRACKER
-==========================
-
-A website records page visits.
-
-pages = ["Home","About","Home","Contact","Home","About"]
-
-Write a program to:
-
-* Count visits of each page using a dictionary.
-* Display page name and visit count.
-
-Sample Output:
-Home visited 3 times
-About visited 2 times
-Contact visited 1 time
-
----
-
-4.
-
-=========================================
-STUDENT GRADE ANALYSIS
-======================
-
-Store student marks in a dictionary.
-
-students = {
-"Ajay":78,
-"Ravi":92,
-"Neha":85,
-"Aman":65
-}
-
-Write a program to:
-
-* Find the student with highest marks.
-* Find the student with lowest marks.
-
-Sample Output:
-Highest Marks : Ravi 92
-Lowest Marks : Aman 65
-
----
-
-5.
-
-=========================================
-WORD LENGTH GROUPING
-====================
-
-A content management system stores article tags.
-
-tags = ["python","java","api","react","html","css"]
-
-Write a program to:
-
-* Group words according to their length.
-* Store result in dictionary.
-
-Sample Output:
+Patient Name
+Age
+Gender
+Disease
+Doctor Name
+Sample Data Structure
 {
-3:['api','css'],
-4:['java','html'],
-5:['react'],
-6:['python']
+101:{
+    "name":"Ajay",
+    "age":35,
+    "gender":"Male",
+    "disease":"Fever",
+    "doctor":"Dr. Sharma"
+},
+102:{
+    "name":"Ravi",
+    "age":42,
+    "gender":"Male",
+    "disease":"Diabetes",
+    "doctor":"Dr. Gupta"
 }
-
----
-
-6.
-
-=========================================
-MOBILE APP DOWNLOAD COUNTER
-===========================
-
-Downloads received from different cities:
-
-cities = ["Indore","Bhopal","Indore","Pune","Delhi","Pune","Indore"]
-
-Write a program to:
-
-* Count downloads city-wise.
-* Display city with maximum downloads.
-
-Sample Output:
-{'Indore':3,'Bhopal':1,'Pune':2,'Delhi':1}
-Most Downloads : Indore
-
----
-
-7.
-
-=========================================
-ONLINE EXAM RESULT SYSTEM
-=========================
-
-Store student marks in a dictionary.
-
-results = {
-"Ajay":88,
-"Ravi":45,
-"Neha":76,
-"Aman":39
 }
+Menu Driven Program
 
-Write a program to:
+Display the following menu repeatedly until the user chooses Exit.
 
-* Display names of students who passed.
-  (Passing Marks = 50)
+=====================================
+ HOSPITAL PATIENT MANAGEMENT SYSTEM
+=====================================
 
-Sample Output:
-Ajay
-Neha
-Ravi
+1. Add New Patient
+2. Search Patient
+3. Update Patient Disease
+4. Delete Patient Record
+5. Display All Patients
+6. Count Total Patients
+7. Display Patients By Disease
+8. Display Oldest Patient
+9. Display Youngest Patient
+10. Exit
 
----
+Functional Requirements
+1. Add New Patient
 
-8.
+Accept the following information from the user:
 
-=========================================
-LIBRARY BOOK ISSUE TRACKER
-==========================
+Patient ID
+Patient Name
+Age
+Gender
+Disease
+Doctor Name
 
-A library records issued books.
+Store the record in the nested dictionary.
 
-books = [
-"Python",
-"Java",
-"Python",
-"C++",
-"Java",
-"Python"
-]
+Validation:
+If the Patient ID already exists, display:
 
-Write a program to:
+Patient ID already exists.
 
-* Count how many times each book was issued.
+2. Search Patient
 
-Sample Output:
-{
-'Python':3,
-'Java':2,
-'C++':1
-}
+Accept Patient ID from the user.
 
----
+If the patient exists, display complete information.
 
-9.
+Sample Output
 
-=========================================
-INVENTORY MANAGEMENT SYSTEM
-===========================
+Patient ID : 101
+Name       : Ajay
+Age        : 35
+Gender     : Male
+Disease    : Fever
+Doctor     : Dr. Sharma
 
-Store product stock in a dictionary.
+If Patient ID is not found:
 
-stock = {
-"Pen":50,
-"Pencil":100,
-"Eraser":25,
-"Marker":10
-}
+Patient Record Not Found
 
-Write a program to:
+3. Update Patient Disease
 
-* Display products having stock less than 30.
+Accept Patient ID.
 
-Sample Output:
-Eraser
-Marker
+If found:
 
----
+Ask for new disease.
+Update the disease information.
 
-10.
+Sample Output
 
-=========================================
-EMAIL DOMAIN COUNTER
-====================
+Disease Updated Successfully
+4. Delete Patient Record
 
-emails = [
-"[ajay@gmail.com](mailto:ajay@gmail.com)",
-"[ravi@yahoo.com](mailto:ravi@yahoo.com)",
-"[neha@gmail.com](mailto:neha@gmail.com)",
-"[aman@outlook.com](mailto:aman@outlook.com)",
-"[abc@gmail.com](mailto:abc@gmail.com)"
-]
+Accept Patient ID.
 
-Write a program to:
+If found:
 
-* Count users belonging to each email domain.
+Remove the patient record.
 
-Sample Output:
-{
-'gmail.com':3,
-'yahoo.com':1,
-'outlook.com':1
-}
+Sample Output
 
----
+Patient Record Deleted Successfully
 
-11.
+Otherwise:
 
-=========================================
-PRODUCT SALES ANALYSIS
-======================
+Patient Not Found
+5. Display All Patients
 
-sales = [
-"Mobile",
-"Laptop",
-"Mobile",
-"Tablet",
-"Laptop",
-"Mobile"
-]
+Display all patient records in a formatted manner.
 
-Write a program to:
+Sample Output
 
-* Count sales of each product.
-* Display products in sorted order.
+--------------------------------
+Patient ID : 101
+Name       : Ajay
+Age        : 35
+Disease    : Fever
+Doctor     : Dr. Sharma
+--------------------------------
 
-Sample Output:
-Laptop : 2
-Mobile : 3
-Tablet : 1
+Patient ID : 102
+Name       : Ravi
+Age        : 42
+Disease    : Diabetes
+Doctor     : Dr. Gupta
+6. Count Total Patients
 
----
+Display the total number of patients currently stored.
 
-12.
+Sample Output
 
-=========================================
-ONLINE FOOD DELIVERY ANALYSIS
-=============================
+Total Patients : 25
+7. Display Patients By Disease
 
-orders = [
-"Pizza",
-"Burger",
-"Pizza",
-"Pasta",
-"Burger",
-"Pizza",
-"Pasta"
-]
+Accept a disease name from the user.
 
-Write a program to:
+Display all patients suffering from that disease.
 
-* Count orders of each food item.
-* Find the most ordered item.
+Sample Output
 
-Sample Output:
-Pizza : 3
-Burger : 2
-Pasta : 2
+Enter Disease : Fever
 
-Most Ordered : Pizza
+101  Ajay
+108  Aman
+115  Neha
 
----
+If no patient is found:
+
+No Patient Found
+8. Display Oldest Patient
+
+Find and display the patient having the highest age.
+
+Sample Output
+
+Oldest Patient Details
+
+Patient ID : 110
+Name       : Ravi
+Age        : 68
+Disease    : Diabetes
+Doctor     : Dr. Gupta
+9. Display Youngest Patient
+
+Find and display the patient having the minimum age.
+
+Sample Output
+
+Youngest Patient Details
+
+Patient ID : 121
+Name       : Riya
+Age        : 4
+Disease    : Viral Fever
+Doctor     : Dr. Mehta
+10. Exit
+
+Terminate the application.
+
+Sample Output
+
+Thank You For Using Hospital Patient Management System
 """
+print("=====================================")
+print("HOSPITAL PATIENT MANAGEMENT SYSTEM")
+print("=====================================")
+d = {}
+while True:
+    
+    print("1. Add New Patient")
+    print("2. Search Patient")
+    print("3. Update Patient Disease")
+    print("4. Delete Patient Record")
+    print("5. Display All Patients")
+    print("6. Count Total Patients")
+    print("7. Display Patients By Disease")
+    print("8. Display Oldest Patient")
+    print("9. Display Youngest Patient")
+    print("10. Exit")
+    choice = int(input("enter the choice"))
+    match choice:
+        case 1:
+            patient_id = int(input("enter the patient_id"))
+            if patient_id in d:
+                print("patient id is alredy exits")
+            else:
+                name = input("enter the name:")
+                age = int(input("enter the age:"))
+                disease =input("enter the diesec:")
+                doctor = input("enter the doctor name:")
+                d[patient_id]={
+                    "name" :name,
+                    "age" : age,
+                    "disease" :disease,
+                    "doctor" :doctor
+                    
+                    }                    
+                print("record added successfully")                
+        case 2:
+            p_id = int(input("enter the patient_id"))
+            
+            if p_id in d:
+                p = d[p_id]
+                print("patient_id:",p_id)
+                print("name:",p["name"])
+                print("age:",p["age"])
+                print("disease:",p["disease"])
+                print("doctor:",p["doctor"])
+            else:
+                print("patient id not found")            
+        
+        case 3:
+            p_id = int(input("enter the patient_id"))
+            if p_id in d:
+                new_diseses = input("enter the disese")
+                d[p_id]["disease"]=new_diseses
+                print("disease updated successfully")
+        
+        case 4:
+            p_id = int(input("enter the patient_id"))
+            if p_id in d:
+                del d[p_id] 
+                print("patient deleted successfully")
+            else:
+                print("patient not found") 
+        case 5:
+            if not d:
+                print("patient record not found")
+            else:
+                for  p_id,p in d.items():
+                   print("patient id :",p_id)
+                   print("Name : ",p["name"])
+                   print("age: ",p["age"])
+                   print("disease: ",p["disease"]) 
+                   print("Docter : ",p["doctor"])
+        case 6:
+            print("Total number of patient",len(d))        
+    
+        case 7:
+            disease = input("Enter Disease: ")
+            found = False
+            for pid, p in d.items():
+                if p["disease"].lower() == disease.lower():
+                    print(pid, p["name"])
+                    found = True
+            if not found:
+                print("No Patient Found")
+        case 8:
+            if d:
+               ages = {pid: p["age"] for pid, p in d.items()}
+               oldest_id = max(ages, key=ages.get)
+               p = d[oldest_id]
+
+               print("\nOldest Patient Details")
+               print("Patient ID :", oldest_id)
+               print("Name       :", p["name"])
+               print("Age        :", p["age"])
+               print("Disease    :", p["disease"])
+               print("Doctor     :", p["doctor"])
+            else:
+               print("No Patient Records Found")
+        case 9:
+            if d:
+               youngest_id = min(ages, key=ages.get)
+               p = d[youngest_id]
+
+               print("\nYoungest Patient Details")
+               print("Patient ID :", youngest_id)
+               print("Name       :", p["name"])
+               print("Age        :", p["age"])
+               print("Disease    :", p["disease"])
+               print("Doctor     :", p["doctor"])
+            else:
+               print("No Patient Records Found") 
+        case 10:
+            print("Exit")
+            break 
+        case _:
+            print("invalid choice")        
+
